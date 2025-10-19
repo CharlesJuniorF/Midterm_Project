@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public static class Extensions
@@ -16,9 +17,15 @@ public static class Extensions
         float radius = 0.25f;
         float distance = 0.375f;
 
-        RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction, distance, layerMask);
+        RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction.normalized, distance, layerMask);
 
         return hit.collider != null && hit.rigidbody != rigidbody;
     }
 
+    public static bool DotTest(this Transform transform, Transform other, Vector2 testDirection)
+    {
+        Vector2 direction = other.position - transform.position;
+
+        return Vector2.Dot(direction.normalized, testDirection) > 0.25f;
+    }
 }

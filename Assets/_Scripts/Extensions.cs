@@ -6,9 +6,9 @@ public static class Extensions
 {
     private static LayerMask layerMask = LayerMask.GetMask("Default");
 
-    public static bool RayCast(this Rigidbody2D rb, Vector2 direction)
+    public static bool RayCast(this Rigidbody2D rigidbody, Vector2 direction)
     {
-        if (rb.isKinematic)
+        if (rigidbody.isKinematic)
         {
             return false;
         }
@@ -16,9 +16,9 @@ public static class Extensions
         float radius = 0.25f;
         float distance = 0.375f;
 
-        RaycastHit2D hit = Physics2D.CircleCast(rb.position, radius, direction, distance, layerMask);
+        RaycastHit2D hit = Physics2D.CircleCast(rigidbody.position, radius, direction, distance, layerMask);
 
-        return hit.collider != null && hit.rigidbody != rb;
+        return hit.collider != null && hit.rigidbody != rigidbody;
     }
 
 }

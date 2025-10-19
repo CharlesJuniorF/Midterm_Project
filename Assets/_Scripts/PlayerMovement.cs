@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = jumpForce;
             jumping = true;
         }
+
+        ApplyGravity();
     }
 
     private void ApplyGravity()

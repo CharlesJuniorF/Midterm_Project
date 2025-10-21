@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class PlayerSpriteRenderer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private SpriteRenderer spriteRenderer;
+    private PlayerMovment movement;
+
+    public Sprite idle;
+    public Sprite jump;
+    public Sprite run;
+    public Sprite slide;
+
+    private void Awake()
     {
-        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        movement = GetComponentInParent<PlayerMovment>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+        if (movement.jumping)
+        {
+            spriteRenderer.sprite = jump;
+        }
+        else if (movement.sliding)
+        {
+            spriteRenderer.sprite = slide;
+        }
+        else if (movement.running)
+        {
+            spriteRenderer.sprite = run;
+        }
+        else
+        {
+            spriteRenderer.sprite = idle;
+        }
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 841406593617446565}
   - component: {fileID: 1467961829526350068}
+  - component: {fileID: 1841015934973241751}
   m_Layer: 6
   m_Name: MarioBig
   m_TagString: Untagged
@@ -84,6 +85,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1841015934973241751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885129661107486400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a288f24ecd1d7824c89143105959c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: 48a04989ac1825043845ad0831f5014f, type: 3}
+  jump: {fileID: 21300000, guid: 8a5fd688e3718d34bbd218ed22862526, type: 3}
+  run: {fileID: 21300000, guid: b2481ca35fd1f2649b1b33b72e6d5098, type: 3}
+  slide: {fileID: 21300000, guid: 0b1c08139a5ddec4294f748bf9491c03, type: 3}
 --- !u!1 &2937217636963847774
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6691412508040662456}
   - component: {fileID: 1912224411925978712}
+  - component: {fileID: 7383050850243135067}
   m_Layer: 6
   m_Name: MarioSmall
   m_TagString: Untagged
@@ -281,3 +299,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7383050850243135067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7798185937014797668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a288f24ecd1d7824c89143105959c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: 17a12759efdefa24dbae64d2496d585d, type: 3}
+  jump: {fileID: 21300000, guid: 253672aceae1b094984e5580eec3d08d, type: 3}
+  run: {fileID: 21300000, guid: 27db628d4867ed6468d4eea304252afe, type: 3}
+  slide: {fileID: 21300000, guid: 3da7df07ba20eee40bf775e4ec277089, type: 3}

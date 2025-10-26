@@ -46,7 +46,7 @@ public class EntitiyMovement : MonoBehaviour
 
         if (rigidBody.RayCast(direction))
         {
-            direction *= -1;
+            direction = -direction;
         }
 
         if (rigidBody.RayCast(Vector2.down))

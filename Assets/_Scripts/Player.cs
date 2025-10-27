@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
     {
         deathAnimation = GetComponent<DeathAnimation>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
+        activeRenderer = smallRenderer;
     }
 
     public void Hit()
@@ -122,4 +123,5 @@ public class Player : MonoBehaviour
 
         starPower = false;
     }
+
 }

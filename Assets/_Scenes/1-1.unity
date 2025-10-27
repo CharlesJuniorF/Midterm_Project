@@ -5083,7 +5083,7 @@ PrefabInstance:
     - target: {fileID: -6145108817585361055, guid: 6cb2f4bb60f6179458c0d96d2f16333a, type: 3}
       propertyPath: item
       value: 
-      objectReference: {fileID: 7344888134941590214, guid: a05864ec9ec68ee48811d851be148df5, type: 3}
+      objectReference: {fileID: 1116561320430914623, guid: bf6e09cd39443d64583497778a2ba6e1, type: 3}
     - target: {fileID: 945806105140556416, guid: 6cb2f4bb60f6179458c0d96d2f16333a, type: 3}
       propertyPath: m_Name
       value: MysteryBlock (3)

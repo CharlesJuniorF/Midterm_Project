@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public int stage { get; private set; }
     public int lives { get; private set; }
     public int coins { get; private set; }
-    public int time;
+    public float time;
 
     private void Awake()
     {
@@ -40,10 +40,11 @@ public class GameManager : MonoBehaviour
         NewGame();
     }
 
-    private void NewGame()
+    public void NewGame()
     {
         lives = 5;
         coins = 0;
+        time = 180;
 
         LoadLevel(1, 1);
     }
@@ -99,5 +100,15 @@ public class GameManager : MonoBehaviour
     public void AddLife()
     {
         lives++;
+    }
+
+    private void FixedUpdate()
+    {
+        time -= Time.deltaTime;
+        
+        if (time <= 0)
+        {
+            GameOver();
+        }
     }
 }

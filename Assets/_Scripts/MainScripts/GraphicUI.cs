@@ -20,9 +20,9 @@ public class GraphicUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        lives.text = "MARIO \nx " + management.lives.ToString();
+        lives.text = "MARIO \nx " + management.lives;
         coins.text = $"COINS \nx{management.coins:D2}";
-        world.text = "WORLD\n" + management.world.ToString() + " - " + management.stage.ToString();
-        time.text = $"TIME\n{management.time:D3}";
+        world.text = "WORLD\n" + management.world + " - " + management.stage;
+        time.text = $"TIME\n{management.time:F0}";
     }
 }

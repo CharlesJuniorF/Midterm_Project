@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3642308220243327676}
   - component: {fileID: 3909954625859016155}
-  m_Layer: 0
+  - component: {fileID: 549730509888630697}
+  m_Layer: 2
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33,6 +34,7 @@ Transform:
   - {fileID: 6985535467616823100}
   - {fileID: 6626076386677289841}
   - {fileID: 3574562143484705673}
+  - {fileID: 1607452118632717625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3909954625859016155
@@ -80,6 +82,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &549730509888630697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2219390705125299785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2361400f25590dc4badcec403370c8c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flag: {fileID: 6626076386677289841}
+  polebottom: {fileID: 1607452118632717625}
+  castle: {fileID: 0}
+  speed: 6
 --- !u!1 &4887809853621966170
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,6 +266,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7183854899222073699
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607452118632717625}
+  m_Layer: 0
+  m_Name: PoleBottom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607452118632717625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7183854899222073699}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3642308220243327676}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4109020572443124330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,6 +308,10 @@ PrefabInstance:
     - target: {fileID: 4624829491800293130, guid: ad69eecdf589a7b4a976702192f2883a, type: 3}
       propertyPath: m_Name
       value: HardBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624829491800293130, guid: ad69eecdf589a7b4a976702192f2883a, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6482851466260235606, guid: ad69eecdf589a7b4a976702192f2883a, type: 3}
       propertyPath: m_LocalPosition.x

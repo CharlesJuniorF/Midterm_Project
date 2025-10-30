@@ -54,7 +54,7 @@ public class Koopa : MonoBehaviour
                 }
             }
         }
-        else if (!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell"))
+        else if (!shelled && other.gameObject.layer == LayerMask.NameToLayer("Shell") || other.gameObject.CompareTag("Arrow"))
         {
             Hit();
         }

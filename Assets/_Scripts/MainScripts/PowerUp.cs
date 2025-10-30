@@ -44,7 +44,7 @@ public class PowerUp : MonoBehaviour
                 break;
 
             case Type.ArrowPower:
-
+                player.GetComponent<Player>().ArrowPower();
                 break;
         }
 

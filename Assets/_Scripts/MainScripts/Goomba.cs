@@ -25,6 +25,11 @@ public class Goomba : MonoBehaviour
                 player.Hit();
             }
         }
+
+        else if (collision.gameObject.CompareTag("Arrow"))
+        {
+            Hit();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

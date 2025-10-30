@@ -14,6 +14,8 @@ public class PlayerMovment : MonoBehaviour
     public float moveSpeed = 8.0f;
     public float maxJumpHeight = 5.0f;
     public float maxJumpTime = 1f;
+    public Arrow arrowProjectile;
+    public Transform launchOffset;
 
     public float jumpForce => (2f * maxJumpHeight) / (maxJumpTime / 2f);
     public float gravity => (-2f * maxJumpHeight) / Mathf.Pow((maxJumpTime / 2f), 2);
@@ -48,6 +50,7 @@ public class PlayerMovment : MonoBehaviour
 
     private void Update()
     {
+        Shoot();
         HorizontalMovement();
         grounded = rigidbody.RayCast(Vector2.down);
 
@@ -57,6 +60,16 @@ public class PlayerMovment : MonoBehaviour
         }
 
         ApplyGravity();
+    }
+
+    private void Shoot()
+    {
+        Player player = GetComponent<Player>();
+
+        if (Input.GetButtonDown("Fire1") && player.arrowPower)
+        {
+            Instantiate(arrowProjectile, launchOffset.position, transform.rotation);
+        }
     }
 
     private void HorizontalMovement()
@@ -73,7 +86,7 @@ public class PlayerMovment : MonoBehaviour
         {
             transform.eulerAngles = Vector3.zero;
         }
-        else
+        else if (velocity.x < 0f)
         {
             transform.eulerAngles = new Vector3(0f, 180f, 0f);
         }

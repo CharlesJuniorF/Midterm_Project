@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     public PlayerSpriteRenderer smallRenderer;
     public PlayerSpriteRenderer largeRenderer;
+    public PlayerSpriteRenderer arrowRenderer;
 
     private PlayerSpriteRenderer activeRenderer;
     private CapsuleCollider2D capsuleCollider;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour
     public bool big => largeRenderer.enabled;
     public bool small => smallRenderer.enabled;
     public bool dead => deathAnimation.enabled;
+    public bool arrowPower => arrowRenderer.enabled;
     public bool starPower { get; private set; }
 
     private void Awake()
@@ -28,7 +30,11 @@ public class Player : MonoBehaviour
     {
         if (!dead && !starPower)
         {
-            if (big)
+            if (arrowPower)
+            {
+                Grow();
+            }
+            else if (big)
             {
                 Shrink();
             }
@@ -72,6 +78,27 @@ public class Player : MonoBehaviour
         StartCoroutine(ScaleAnimator());
     }
 
+    public void ArrowPower()
+    {
+        if (smallRenderer.enabled)
+        {
+            smallRenderer.enabled = false;
+            arrowRenderer.enabled = true;
+        }
+        else
+        {
+            largeRenderer.enabled = false;
+            arrowRenderer.enabled = true;
+        }
+
+        activeRenderer = arrowRenderer;
+
+        capsuleCollider.size = new Vector2(1.0f, 2.0f);
+        capsuleCollider.offset = new Vector2(0.0f, 0.5f);
+
+        StartCoroutine (ScaleAnimator());
+    }
+
     private IEnumerator ScaleAnimator()
     {
         float elapsed = 0.0f;
@@ -85,6 +112,7 @@ public class Player : MonoBehaviour
             {
                 smallRenderer.enabled = !smallRenderer.enabled;
                 largeRenderer.enabled = !smallRenderer.enabled;
+                arrowRenderer.enabled = !smallRenderer.enabled;
             }
 
             yield return null;
@@ -92,6 +120,7 @@ public class Player : MonoBehaviour
 
         smallRenderer.enabled = false;
         largeRenderer.enabled = false;
+        arrowRenderer.enabled = false;
 
         activeRenderer.enabled = true;
     }
@@ -124,4 +153,5 @@ public class Player : MonoBehaviour
         starPower = false;
     }
 
+    
 }

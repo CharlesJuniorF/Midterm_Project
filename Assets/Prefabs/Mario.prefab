@@ -120,6 +120,37 @@ MonoBehaviour:
   - {fileID: 21300000, guid: bcf252286f6cb1c4eb45aa6a41a9fb22, type: 3}
   - {fileID: 21300000, guid: 70f00d3e09e2ec84380cf90d296e98f6, type: 3}
   framerate: 0.16666667
+--- !u!1 &2329089472683079101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4644489782381785915}
+  m_Layer: 0
+  m_Name: FireOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4644489782381785915
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2329089472683079101}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8515577593093656968}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2937217636963847774
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +187,8 @@ Transform:
   m_Children:
   - {fileID: 6691412508040662456}
   - {fileID: 841406593617446565}
+  - {fileID: 6360201141851860705}
+  - {fileID: 4644489782381785915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2725795755126705878
@@ -234,6 +267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smallRenderer: {fileID: 7383050850243135067}
   largeRenderer: {fileID: 1841015934973241751}
+  arrowRenderer: {fileID: 3703848745784704100}
 --- !u!114 &1135975889265432380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,6 +283,8 @@ MonoBehaviour:
   moveSpeed: 8
   maxJumpHeight: 5
   maxJumpTime: 1
+  arrowProjectile: {fileID: 7857599218249903988, guid: d7e7dc852b2244f48b015b9af759630d, type: 3}
+  launchOffset: {fileID: 4644489782381785915}
 --- !u!114 &-4839230386002572175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,4 +418,124 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c5622aa8fbbb3db429a96950983b9824, type: 3}
   - {fileID: 21300000, guid: 95f725ba85c338c4eaa51465d540634f, type: 3}
   - {fileID: 21300000, guid: c5622aa8fbbb3db429a96950983b9824, type: 3}
+  framerate: 0.16666667
+--- !u!1 &8035152547752998971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6360201141851860705}
+  - component: {fileID: 6602766928906498918}
+  - component: {fileID: 3703848745784704100}
+  - component: {fileID: 3197075594617814462}
+  m_Layer: 6
+  m_Name: ArrowMario
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6360201141851860705
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035152547752998971}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8515577593093656968}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &6602766928906498918
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035152547752998971}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 48a04989ac1825043845ad0831f5014f, type: 3}
+  m_Color: {r: 0.014752639, g: 0.97735846, b: 0.021960184, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &3703848745784704100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035152547752998971}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a288f24ecd1d7824c89143105959c5a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idle: {fileID: 21300000, guid: 48a04989ac1825043845ad0831f5014f, type: 3}
+  jump: {fileID: 21300000, guid: 8a5fd688e3718d34bbd218ed22862526, type: 3}
+  slide: {fileID: 21300000, guid: 0b1c08139a5ddec4294f748bf9491c03, type: 3}
+  run: {fileID: 3197075594617814462}
+--- !u!114 &3197075594617814462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8035152547752998971}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8530f871873de448c65df7a13b141e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: b2481ca35fd1f2649b1b33b72e6d5098, type: 3}
+  - {fileID: 21300000, guid: 70f00d3e09e2ec84380cf90d296e98f6, type: 3}
+  - {fileID: 21300000, guid: bcf252286f6cb1c4eb45aa6a41a9fb22, type: 3}
+  - {fileID: 21300000, guid: 70f00d3e09e2ec84380cf90d296e98f6, type: 3}
   framerate: 0.16666667
